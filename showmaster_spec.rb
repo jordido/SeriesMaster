@@ -7,7 +7,7 @@ describe 'ShowMaster' do
       @showmaster.best_ever.should == "The Wire"
     end
   end
-=begin
+
   describe "#rating_of" do
   	it "It works The wire" do
   		@showmaster.rating_of?('The Wire').should == 9.4
@@ -37,11 +37,14 @@ describe 'ShowMaster' do
 			@showmaster.search_string('Cat').should > 200
 		end
 	end
-=end
 
 	describe "#most_episodes_from" do
 		it 'It works with Breaking Bad, Friends, Game of Thrones and The office' do
 			@showmaster.most_episodes_from(["Breaking Bad", "Friends", "Game of Thrones", "The Office"]).should == "Friends"
+		end
+
+		it 'It works with Breaking Bad, Friends, Game of Thrones, The office and The Simpsons' do
+			@showmaster.most_episodes_from(["Breaking Bad", "Friends", "Game of Thrones", "The Office", "The Simpsons"]).should == "The Simpsons"
 		end
 	end
 

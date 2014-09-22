@@ -22,16 +22,13 @@ class ShowMaster
   end
 
   def most_episodes_from(list)
-
     list.map do |element|
       movie = Imdb::Search.new(element).movies.first
       Imdb::Serie.new(movie.id)
     end.max do |serie1, serie2|
-      serie1.seasons.count <=> serie2.seasons.count
-    end.title.gsub('"',"")
+          serie1.seasons.count <=> serie2.seasons.count
+        end.title.gsub('"',"")
   end
 
 end
-
-
 
