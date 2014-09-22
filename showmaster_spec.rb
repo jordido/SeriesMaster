@@ -7,6 +7,7 @@ describe 'ShowMaster' do
       @showmaster.best_ever.should == "The Wire"
     end
   end
+=begin
   describe "#rating_of" do
   	it "It works The wire" do
   		@showmaster.rating_of?('The Wire').should == 9.4
@@ -16,13 +17,13 @@ describe 'ShowMaster' do
 	  end
 	end
   describe "#best_within" do
-  	it "It works with best_within Breaking Bad, Veep and Mom"
+  	it "It works with best_within Breaking Bad, Veep and Mom" do
 	  	@showmaster.best_within([
 						  "Breaking Bad",
 						  "Veep",
 						  "Mom"
 						]).should == 'Breaking Bad'
-	  	end
+	  end
   	it "It works with best within Utopia, Game of Thrones and The Office" do
 	  	@showmaster.best_within([
 				  	  "Utopia",
@@ -31,4 +32,17 @@ describe 'ShowMaster' do
 				  	]).should == 'Game of Thrones'
 	  end
 	end
+	describe "#search_string" do
+		it 'It works with "Cat"' do
+			@showmaster.search_string('Cat').should > 200
+		end
+	end
+=end
+
+	describe "#most_episodes_from" do
+		it 'It works with Breaking Bad, Friends, Game of Thrones and The office' do
+			@showmaster.most_episodes_from(["Breaking Bad", "Friends", "Game of Thrones", "The Office"]).should == "Friends"
+		end
+	end
+
 end
